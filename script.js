@@ -25,7 +25,7 @@ function spinner(pic){
         }
     }
 
-    pic.onpointerdown = spinning;
+    pic.addEventListener('click', spinning)
     function spinning() {
         audio.play();
         spin(pic)
