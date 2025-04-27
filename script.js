@@ -11,7 +11,7 @@ spinner(document.getElementById('pic10'))
 spinner(document.getElementById('pic11'))
 spinner(document.getElementById('pic12'))
 
-
+let audio = new Audio('assets/ding.mp3');
 
 function spinner(pic){
     function sleep(ms) {
@@ -25,5 +25,9 @@ function spinner(pic){
         }
     }
 
-    pic.onpointerdown = () => spin(pic);
+    pic.onpointerdown = spinning;
+    function spinning() {
+        audio.play();
+        spin(pic)
+    }
 }
