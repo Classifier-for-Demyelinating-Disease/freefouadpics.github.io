@@ -11,8 +11,6 @@ spinner(document.getElementById('pic10'))
 spinner(document.getElementById('pic11'))
 spinner(document.getElementById('pic12'))
 
-let audio = new Audio('assets/ding.mp3');
-
 function spinner(pic){
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -27,6 +25,7 @@ function spinner(pic){
 
     pic.addEventListener('click', spinning)
     function spinning() {
+        let audio = new Audio('assets/ding.mp3');
         audio.play();
         spin(pic)
     }
